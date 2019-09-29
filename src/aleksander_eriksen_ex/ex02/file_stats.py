@@ -1,8 +1,10 @@
 def char_counts(textfilename):
     """
-    The char_counts() function opens the file with the given filename using encoding utf-8
+    The char_counts() function opens the file with the given filename
+    using encoding utf-8
     and reads the entire file content into a single string.
-    It then counts each character code (0–255) that occurs in the string and returns the result as a list,
+    It then counts each character code (0–255) that occurs in the string
+    and returns the result as a list,
     result[i] gives the number of occurances of charactor (ascii) code [i].
 
     Parameters
