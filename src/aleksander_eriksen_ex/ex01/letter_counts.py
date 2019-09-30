@@ -17,3 +17,4 @@ if __name__ == '__main__':
     frequencies = letter_freq(text)
     for letter, count in frequencies.items():
         print('{:3}{:10}'.format(letter, count))
+
