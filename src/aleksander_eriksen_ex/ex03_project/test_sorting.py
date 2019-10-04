@@ -3,9 +3,10 @@
 __author__ = 'Aleksander Eriksen'
 __email__ = 'jaer@nmbu.no'
 
-import pytest
-import string
 import random
+import string
+
+import pytest
 
 
 @pytest.fixture  # Decorator for the functions
