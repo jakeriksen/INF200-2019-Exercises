@@ -2,13 +2,12 @@
 import numpy as np
 
 
-# Didn't manage to import letter_freq from its own directory
 def letter_freq(txt):
-    txt = sorted(txt.lower())  # sorted() sorts the characters in alphabetical order, while txt.lower lowers the text
+    txt_ = sorted(txt.lower())  # Sort lower text
     freq = {}  # Making a dictionary for the frequency
 
-    for character in txt:  # Running through the characters, then adding the characters into the dict and counts them
-        if character not in freq.keys():  # Checking if the key is there, 'else' it adds +1 to the counter
+    for character in txt_:  # Character checker and counter
+        if character not in freq.keys():
             freq[character] = 1
         else:
             freq[character] += 1
