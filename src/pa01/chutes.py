@@ -2,3 +2,7 @@
 
 __author__ = 'Aleksander Eriksen'
 __email__ = 'jaer@nmbu.no'
+
+
+def some_dummy():
+	pass
