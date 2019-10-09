@@ -3,6 +3,10 @@
 __author__ = 'Aleksander Eriksen', 'Eirik Høyheim'
 __email__ = 'jaer@nmbu.no', 'eirihoyh@nmbu.no'
 
+from random import randint
+
+def dice():
+    return randint(1, 6)
 
 def single_game(num_players):
 	"""
@@ -21,10 +25,10 @@ def single_game(num_players):
 
 
 	ladders = {1: 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85}
-
-
-
     snakes = {24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
+
+	while player_position < 90:
+
 
 def multiple_games(num_games, num_players):
 	"""
