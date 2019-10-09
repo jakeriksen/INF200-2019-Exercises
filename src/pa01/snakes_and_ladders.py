@@ -3,7 +3,7 @@
 __author__ = 'Aleksander Eriksen', 'Eirik Høyheim'
 __email__ = 'jaer@nmbu.no', 'eirihoyh@nmbu.no'
 
-# jeg liker salsa, ok?
+
 
 def single_game(num_players):
     """
