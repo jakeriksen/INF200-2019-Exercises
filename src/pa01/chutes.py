@@ -1,4 +1,5 @@
-__author__ = 'Aleksander Eriksen'
-__email__ = 'jaer@nmbu.no'
+# -*- coding: utf-8 -*-
 
-# do sth else
+__author__ = 'Aleksander Eriksen', 'Eirik Høyheim'
+__email__ = 'jaer@nmbu.no', 'eirihoyh@nmbu.no'
+
