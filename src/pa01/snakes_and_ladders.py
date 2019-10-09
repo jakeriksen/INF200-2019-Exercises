@@ -24,20 +24,23 @@ def single_game(num_players):
 	"""
 
 
-    ladders = {1: 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85}
-    snakes = {24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
-    players = [0]*num_players
-    numbers_of_moves = [0]*num_players
+    snake_ladder = {1: 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85,
+					24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
+    player_position = [0]*num_players
+    player_moves = [0]*num_players
     while players < 90:
         for steps in range(0, num_players)
-            players[steps] += throw_dice()
+            player_moves[steps] += throw_dice()
+
+
+
             if players[steps] in ladders.key:
                 players[steps] = ladders.value
 
+	def throw_and_move():
 
+	def check_if_snake_ladder():
 
-	while player_position < 90:
-        player_throw = throw
 
 
 def multiple_games(num_games, num_players):
