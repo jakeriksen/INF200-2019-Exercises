@@ -20,6 +20,9 @@ def single_game(num_players):
         Number of moves the winning player needed to reach the goal
     """
 
+
+    snakes = {24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
+
 def multiple_games(num_games, num_players):
     """
     Returns durations of a number of games.
