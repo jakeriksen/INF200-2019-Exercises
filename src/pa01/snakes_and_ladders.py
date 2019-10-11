@@ -5,41 +5,31 @@ __email__ = 'jaer@nmbu.no', 'eirihoyh@nmbu.no'
 
 from random import randint
 
+
 def throw_dice():
     return randint(1, 6)
 
+
 def single_game(num_players):
-	"""
-	Returns duration of single game.
-
-	Arguments
-	---------
-	num_players : int
-		Number of players in the game
-
-	Returns
-	-------
-	num_moves : int
-		Number of moves the winning player needed to reach the goal
-	"""
-
-
     snake_ladder = {1: 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85,
-					24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
-    player_position = [0]*num_players
-    player_moves = [0]*num_players
-    while players < 90:
-        for steps in range(0, num_players)
-            player_moves[steps] += throw_dice()
+                    24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
 
+    player_pos = [0] * num_players
+    player_moves = [0] * num_players
+    for game in range(num_players):
 
+        while player_pos[game] < 90:
+            player_pos[game] += throw_dice()
 
-            if players[steps] in ladders.key:
-                players[steps] = ladders.value
+            if player_pos[game] in snake_ladder:
+                player_pos[game] = snake_ladder[player_pos[game]]
 
-	def throw_and_move():
+            player_moves[game] += 1
 
-	def check_if_snake_ladder():
+    sort_moves = sorted(player_moves)
+    winner = sort_moves[0]
+
+    return winner
 
 
 
