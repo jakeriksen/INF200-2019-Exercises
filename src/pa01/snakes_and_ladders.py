@@ -7,35 +7,32 @@ from random import randint
 
 
 def throw_dice():
-    return randint(1, 6)
+	return randint(1, 6)
 
 
 def single_game(num_players):
-    snake_ladder = {1: 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85,
+	snake_ladder = {1 : 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85,
 					24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
-    player_position = [0]*num_players
-    player_moves = [0]*num_players
-    while players < 90:
-        for steps in range(0, num_players)
-            player_moves[steps] += throw_dice()
 
-    player_pos = [0] * num_players
-    player_moves = [0] * num_players
-    for game in range(num_players):
+	player_pos = [0] * num_players # Initializing player positions
+	player_moves = [0] * num_players # Initializing player moves
 
-        while player_pos[game] < 90:
-            player_pos[game] += throw_dice()
+	for game in range(num_players): # Going through each players game
 
-            if player_pos[game] in snake_ladder:
-                player_pos[game] = snake_ladder[player_pos[game]]
+		while player_pos[game] < 90: # Done when player reaches 90
+			player_pos[game] += throw_dice() # adding dice-value to position
 
-            player_moves[game] += 1
+			# Checking if player position is in snake or ladder position
+			# If so, it replaces the position accordingly.
+			if player_pos[game] in snake_ladder:
+				player_pos[game] = snake_ladder[player_pos[game]]
 
-    sort_moves = sorted(player_moves)
-    winner = sort_moves[0]
+			player_moves[game] += 1 # moves/turns of the player
 
-    return winner
+	sort_moves = sorted(player_moves) # sorting player moves (low to high)
+	winner = sort_moves[0] # player with lowest moves wins
 
+	return winner
 
 
 def multiple_games(num_games, num_players):
