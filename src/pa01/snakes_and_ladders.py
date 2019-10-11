@@ -28,7 +28,10 @@ def single_game(num_players):
 					24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70}
     player_position = [0]*num_players
     player_moves = [0]*num_players
-    while players < 90:
+	rounds = 0
+
+    while position < 90:
+		rounds += 1
         for steps in range(0, num_players)
             player_moves[steps] += throw_dice()
 
