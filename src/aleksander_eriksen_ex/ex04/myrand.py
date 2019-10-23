@@ -17,11 +17,15 @@ class LCGRand:
 		return random
 
 
-class ListRand(LCGRand):
+class ListRand:
 	def __init__(self, list_of_numbers):
 		self.list_of_numbers = list_of_numbers
+		self.idx = 0
 
-
-
-
-
+	def rand(self):
+		if self.idx >= len(self.list_of_numbers):
+			raise RuntimeError('list index out of range, '
+							   'rand() called too many times')
+		number = self.list_of_numbers[self.idx]
+		self.idx += 1
+		return number

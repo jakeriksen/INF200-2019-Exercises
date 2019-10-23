@@ -7,20 +7,41 @@ import random
 
 
 class Walker:
-	def __init__(self, x0, h):
-		self.x0 = x0
-		self.h = h
-		self.x = x
-		self.steps = steps
+	def __init__(self, start, home):
+		self.pos_x = start
+		self.home = home
+		self.steps = 0
 
 	def move(self):
-		self.x 
+		random_step = random.randint(0, 1)  # Need to use randint()
+		if random_step == 0:
+			random_step = -1
+		self.pos_x += random_step  # Would rather use random.choice([-1, 1])
+		self.steps += 1
+
+	def is_at_home(self):
+		if self.pos_x == self.home:
+			return True
+		return False
+
+	def get_position(self):
+		return self.pos_x
+
+	def get_steps(self):
+		return self.steps
 
 
-	def is_at_home(self, x, h):
+def walk(start, home):
+	drunk_walker = Walker(start, home)
+	while not drunk_walker.is_at_home():
+		drunk_walker.move()
+	return drunk_walker.get_steps()
 
 
-	def get_position(self, x):
+if __name__ == "__main__":
+	distances = [1, 2, 5, 10, 20, 50, 100]
+	simulations = 5
 
-
-	def get_steps(self, steps):
+	for distance in distances:
+		list_walk = [walk(0, distance) for _ in range(simulations)]
+		print(f'Distance: {distance:4d} -> Path lengths: {list_walk}')
