@@ -3,16 +3,18 @@
 __author__ = 'Aleksander Eriksen'
 __email__ = 'jaer@nmbu.no'
 
-a = 7 ** 5
-m = 2 ** 31 - 1
+
 
 
 class LCGRand:
+	a = 7 ** 5
+	m = 2 ** 31 - 1
+
 	def __init__(self, seed):
 		self.seed = seed
 
 	def rand(self):
-		random = a * self.seed % m
+		random = LCGRand.a * self.seed % LCGRand.m
 		self.seed = random
 		return random
 
