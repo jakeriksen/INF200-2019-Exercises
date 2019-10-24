@@ -10,7 +10,7 @@ class LCGRand:
 
 	def __init__(self, seed):
 		"""
-		param seed: seed for the linear congruential generator
+		param seed: seed for the linear congruential generator (LCG)
 		"""
 		self.seed = seed
 
