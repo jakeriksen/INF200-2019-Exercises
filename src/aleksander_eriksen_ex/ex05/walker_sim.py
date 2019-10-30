@@ -20,18 +20,13 @@ class Walker:
 	def move(self):
 		"""Changes the position by -1 or +1 along the 1D route
 		"""
-		random_step = random.randint(0, 1)  # Need to use randint()
-		if random_step == 0:
-			random_step = -1
-		self.pos_x += random_step  # Would rather use random.choice([-1, 1])
+		self.pos_x += (-1) ** random.randint(0, 1)
 		self.steps += 1
 
 	def is_at_home(self):
 		"""Returns True if walker is at home position.
 		"""
-		if self.pos_x == self.home:
-			return True
-		return False
+		return self.pos_x == self.home
 
 	def get_position(self):
 		"""Returns current position.
@@ -59,8 +54,6 @@ class Simulation(Walker):
 			Random generator seed
 		"""
 		super().__init__(start, home)
-		self.start = start
-		self.home = home
 		self.seed = random.seed(seed)
 
 	def single_walk(self):
@@ -72,7 +65,7 @@ class Simulation(Walker):
 		int
 			The number of steps taken
 		"""
-		walk_ = Walker(self.start, self.home)
+		walk_ = Walker(self.pos_x, self.home)
 		while not walk_.is_at_home():
 			walk_.move()
 		return walk_.get_steps()
