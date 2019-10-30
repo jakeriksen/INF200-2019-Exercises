@@ -44,9 +44,6 @@ class Walker:
 		return self.steps
 
 
-
-
-
 class Simulation(Walker):
 	def __init__(self, start, home, seed):
 		"""
@@ -61,6 +58,7 @@ class Simulation(Walker):
 		seed : int
 			Random generator seed
 		"""
+		super().__init__(start, home)
 		self.start = start
 		self.home = home
 		self.seed = random.seed(seed)
@@ -79,7 +77,6 @@ class Simulation(Walker):
 			walk_.move()
 		return walk_.get_steps()
 
-
 	def run_simulation(self, num_walks):
 		"""
 		Run a set of walks, returns list of number of steps taken.
@@ -97,25 +94,21 @@ class Simulation(Walker):
 		return [self.single_walk() for _ in range(num_walks)]
 
 
-
-
-
 if __name__ == "__main__":
-	num_walks = 20
+	number_of_walks = 20
 	seed_twice = 12345
 	seed_once = 54321
-	sim_1 = Simulation(0, 10, seed_twice)
-	sim_2 = Simulation(10, 0, seed_twice)
-	sim_3 = Simulation(0, 10, seed_once)
-	sim_4 = Simulation(10, 0, seed_once)
 
-	from_0_to_10 = [walk for walk in sim_1.run_simulation(num_walks)]
-	
-	print(from_0_to_10)
+	print('\nSimulations (seed `12345`) --> from 0 to 10')
+	print(Simulation(0, 10, seed_twice).run_simulation(number_of_walks))
+	print(Simulation(0, 10, seed_twice).run_simulation(number_of_walks))
 
-"""
--  20 walks from start 0 to home 10
--  20 walks from start 10 to home 0
--  for each of those cases simulate *twice* with seed value 12345 and
-   *once* with seed value 54321
--  print the resulting lists (six lists in total)."""
+	print('\nSimulations (seed `12345`) --> from 10 to 0')
+	print(Simulation(10, 0, seed_twice).run_simulation(number_of_walks))
+	print(Simulation(10, 0, seed_twice).run_simulation(number_of_walks))
+
+	print('\nSimulation (seed `54321`) --> from 0 to 10')
+	print(Simulation(0, 10, seed_once).run_simulation(number_of_walks))
+
+	print('\nSimulation (seed `54321`) --> from 10 to 0')
+	print(Simulation(10, 0, seed_once).run_simulation(number_of_walks))
