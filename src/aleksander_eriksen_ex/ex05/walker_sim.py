@@ -8,7 +8,6 @@ import random
 
 class Walker:
 	def __init__(self, start, home):
-
 		"""
 		param start: initial position of the walker
 		param home: final/goal position of the walker
