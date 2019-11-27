@@ -183,15 +183,14 @@ def sigmoid(z):
     Parameters
     ----------
     z : np.ndarray
-        Logit to txransform.
+        Logit to transform.
 
     Returns
     -------
     sigmoidal_transformed_z : np.ndarray
         Transformed input.
     """
-    x = np.ndarray(z)
-    return 1 / (1 + np.exp(-x))
+    return 1 / (1 + np.exp(-z))
 
 
 def predict_proba(coef, X):
@@ -223,8 +222,7 @@ def predict_proba(coef, X):
     p : np.ndarray(shape(n,))
         The predicted class probabilities.
     """
-    # Your code here
-    pass
+    return sigmoid(X @ coef)
 
 
 def logistic_gradient(coef, X, y):
@@ -262,8 +260,8 @@ def logistic_gradient(coef, X, y):
         The gradient of the cross entropy loss related to the linear
         logistic regression model.
     """
-    # Your code here
-    pass
+
+    return X.T @  (predict_proba(coef, X) - y)
 
 
 class LogisticRegression(BaseEstimator, ClassifierMixin):
