@@ -261,7 +261,7 @@ def logistic_gradient(coef, X, y):
         logistic regression model.
     """
 
-    return X.T @  (predict_proba(coef, X) - y)
+    return X.T @ (predict_proba(coef, X) - y) / y.shape[0]
 
 
 class LogisticRegression(BaseEstimator, ClassifierMixin):
