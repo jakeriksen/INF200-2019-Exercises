@@ -4,7 +4,7 @@ from unittest import mock
 import numpy as np
 import pytest
 
-from . import logistic_regression as lr
+import logistic_regression as lr
 
 
 # The fixtures are called whenever their name is used as input to a test
@@ -71,7 +71,7 @@ def patch_with_mock(container, name):
 
     Examples
     --------
-    >>> import numpy as np
+  #  >>> import numpy as np
     ... with patch_with_mock(np, 'array'):
     ...     a = np.array([1])
     ...     np.array.call_count  # -> 1
